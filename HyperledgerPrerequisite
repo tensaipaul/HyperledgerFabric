@@ -1,0 +1,47 @@
+Need: Computers with access to the internet with at least 8 GB RAM and 250 GB Hard Drive.
+
+For Mac Users:
+Follow section "Mac OS" on https://hyperledger.github.io/composer/v0.19/installing/installing-prereqs.html till section "Install VSCode", do not need to follow "Install the Hyperledger Composer Extension for VSCode" section.
+
+Mac Users: Continue with GOLANG Setup-
+Download platform specific golang from -> https://golang.org/dl/
+Run platform specific install commands from -> https://golang.org/doc/install  (usually, run with sudo).
+Set go bin in user profile (as directed).
+Create workspace (typically as /home/<user>/go
+Add workspace as $GOPATH environment variable (update profile).
+Test installation.
+
+For Windows Users:
+Make sure that hardware support for virtualization is enabled -> https://support.lenovo.com/in/en/solutions/ht500006
+Install Oracle VirtualBox -> https://www.virtualbox.org/wiki/Downloads
+After install if, files-> Check for Updates is enabled, update virtualBox to latest.
+Download Ubuntu ISO (ubuntu-18.04.1-desktop-amd64.iso) from Ubuntu site -> https://www.ubuntu.com
+Create VDI image with (4 GB RAM, 25 GB Hard Drive, all other options as default) from downloaded ISO and VirtualBox.
+Launch newly created ubuntu VM and follow steps for Ubuntu
+
+For Ubuntu users:
+You may need to install CURL. To do so, run these commands-
+sudo apt-get update
+sudo apt-get update curl
+
+Follow "Ubuntu" section on-> https://hyperledger.github.io/composer/v0.19/installing/installing-prereqs.html
+It essentially involves only downloading of prereqs-ubuntu.sh script and running it, which in turn will install all other pre-requisites such as- git, nvm, node, docker, docker-compose etc.
+Then install VSCode for ubuntu following -> https://code.visualstudio.com/docs/setup/linux  (follow steps after 'The repository and key can also be installed manually').
+
+Ubuntu users: Continue with GOLANG Setup-
+Download platform specific golang from -> https://golang.org/dl/
+Run platform specific install commands from -> https://golang.org/doc/install  (usually, run with sudo).
+Set go bin in user profile (as directed).
+Create workspace (typically as /home/<user>/go
+Add workspace as $GOPATH environment variable (update profile).
+Test installation.
+================================================
+
+Hyperledger Fabric:
+Once pre-requisites are in place, proceed to -> https://hyperledger-fabric.readthedocs.io/en/latest/install.html  to get fabric images on local.
+Ignore notes for Windows as we are not setting up fabric directly on Windows OS, we will be setting up fabric network on Ubuntu (either as host or VM) / Mac.
+
+To test:
+cd fabric-samples/first-network
+./byfn.sh generate
+./byfn.sh up
