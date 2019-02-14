@@ -6,16 +6,17 @@ The fabric-samples application provides all the mandatory and optional function 
 
 Environment: 
 
-Host: Windows 8 (64-bit) / Intel Core i3 / 4GB RAM / 500gb HHD
-
+Host: 
+Operating System:Windows 8 (64-bit) 
+Processor:Intel Core i3 
+Storage: 4GB RAM / 500gb HHD
 Virtualization software: VMware Workstation Pro 15 (VirtualBox 5.2.22 will do)
-
 Guest: Ubuntu 16.04.5 LTS (64-bit), Config: 4GB RAM / 40GB Storage
 
 
 Table of Contents
 
-A. Prerequisites
+A. Materials
 
 B. Set-up instructions
 
@@ -31,36 +32,33 @@ A. Prerequisites:
 
 2. Clone the fabric-repository from (https://github.com/khrandm/blockchain-training-labs) make sure that the fabric-samples is finished or working properly.
 
-3. Clone https://github.com/tensaipaul/HyperledgerFabric.git
-
-
 B. Set-up instructions:
 
-1. Replace files (or backup before replacing) on your fabric-samples/chaincode/fabcar/go and fabric-samples/fabcar directories with the ones inside this repository.
+1. Replace files (or backup before replacing) on your fabric-samples/chaincode/fabcar/go and fabric-samples/fabcar directories with the ones inside this repository (do not copy the node_module folder).
 
-3. Open fabric-samples/fabcar in Terminal.
+3. From the fabric-samples folder go to fabcar and right click and open terminal.
 
-4. Type and press Enter: ./openScm.sh
+4. Enter './openScm.sh' (command to start Scm.sh)
 
-5. Type and press Enter: node enrollAdmin.sh
+5. Enter 'npm install' (command to install node module) 
 
-6. (Optional) Type and press Enter: node registerUser.sh
+5. Enter 'node enrollAdmin.sh' (command to create your admin).
 
-7. (Optional) Type and press Enter: node rSupplier1.sh
+6. Enter 'node registerUser.sh' (command to register new or another user OPTIONAL)
 
-8. (Optional) Type and press Enter: node rOEM.sh
+7. Enter node 'rSupplier1.sh' (command to register new or another supplier OPTIONAL)
 
-9. To test all functions, type and press Enter: node app_scm.sh
+8. Enter 'node rOEM.sh' (command to register OEM(original equipment manufacturer) user )
 
-   <Port> is 3000.
+9. To test all functions, Enter node app_scm.sh
 
-10. (Optional) To test as supplier1, open a new Terminal window, type and press Enter: node appSupplier1.sh
+10. To test as supplier1, open a new Terminal window, type and press Enter: node appSupplier1.sh
 
     <Port> is 3001.
 
     Note: supplier1 can only raise an invoice (number 3 below).
 
-10. (Optional) To test as OEM, open a new Terminal window, type and press Enter: node appOEM.sh
+10. To test as OEM, open a new Terminal window, type and press Enter: node appOEM.sh
 
     <Port> is 3002.
 
@@ -71,7 +69,7 @@ C. How to use:
 	
 1. Open Postman
 
-2. To display all invoices, set it to GET, type localhost:<Port>/queryAllInvoice in the address bar and click Send.
+2. To display all invoices, set it to GET, type localhost:3000/invoice the address bar and click Send.
 
 3. To raise an invoice, set it to POST, go to Body tab, and tick x-www-form-urlencoded
 
@@ -79,7 +77,6 @@ C. How to use:
 
 	     Key			Value (sample)
 	
-	invoiceNumber		INV002
 	billedTo		Lenovo
 	invoiceDate		2/9/2019
 	invoiceAmount		50000
@@ -90,9 +87,9 @@ C. How to use:
 	repaid			no
 	repaymentAmount		0
 
-   Type localhost:<Port>/invoice in the address bar and click Send.
+   Type localhost:3000/invoice in the address bar and click Send.
 
-   Do number 2 to check if it worked.
+   (To clarify if you have post successfully do step number 2)
 
 4. To set that goods are received in an invoice, set it to PUT, go to Body tab, and tick x-www-form-urlencoded
 
